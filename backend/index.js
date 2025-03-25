@@ -38,7 +38,7 @@ app.post("/post-listing", async (req, res) => {
   try {
     const newListing = new Listing(req.body);
     await newListing.save();
-    const verifyUrl = `http://localhost:5000/verify/${newListing._id}`;
+    const verifyUrl = `https://real-estate-backend-gcol.onrender.com/verify/${newListing._id}`;
     const mailOptions = {
       from: process.env.EMAIL_USER,
       to: req.body.email,
